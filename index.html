@@ -1,312 +1,153 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Search Console -->
-<meta name="google-site-verification" content="urdmy9LCGYEqfBY0HpWSz0ZrP8GzEvk-uSoLEimvzmk" />
+<meta name="google-site-verification" content="urdmy9LCGYEqfBY0HpWSz0ZrP8GzEvk-uSoLEimvzmk">
 
-<!-- SEO -->
-<meta name="description" content="现代化响应式登录注册系统">
-<meta name="keywords" content="登录,注册,会员中心,GitHub Pages">
-<meta name="author" content="Admin">
+<title>NA777</title>
+
+<meta name="description" content="NA777 Official Website">
+<meta name="keywords" content="NA777, NA777.IO">
 <meta name="robots" content="index,follow">
-<meta name="googlebot" content="index,follow">
-<meta name="theme-color" content="#4f46e5">
-
-<!-- Open Graph -->
-<meta property="og:title" content="会员中心">
-<meta property="og:description" content="现代化登录注册页面">
-<meta property="og:type" content="website">
-
-<title>会员中心</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
 }
 
-.container{
-    width:1000px;
-    max-width:100%;
-    background:#fff;
-    border-radius:24px;
-    overflow:hidden;
-    display:flex;
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1920&q=80');
+background-size:cover;
+background-position:center;
 }
 
-.left{
-    flex:1;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
-    color:#fff;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:60px;
+.hero h1{
+font-size:72px;
+margin-bottom:20px;
+letter-spacing:5px;
 }
 
-.left h1{
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-.left p{
-    text-align:center;
-    line-height:1.8;
-    opacity:.95;
-}
-
-.right{
-    flex:1;
-    padding:50px;
-}
-
-.logo{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.logo h2{
-    color:#4f46e5;
-}
-
-.tabs{
-    display:flex;
-    gap:10px;
-    margin-bottom:30px;
-}
-
-.tab{
-    flex:1;
-    border:none;
-    padding:14px;
-    border-radius:12px;
-    cursor:pointer;
-    background:#eef2ff;
-    font-size:16px;
-    transition:.3s;
-}
-
-.tab.active{
-    background:#4f46e5;
-    color:white;
-}
-
-.form{
-    display:none;
-}
-
-.form.active{
-    display:block;
-}
-
-.input-group{
-    margin-bottom:18px;
-}
-
-.input-group input{
-    width:100%;
-    padding:14px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    outline:none;
-    font-size:15px;
-}
-
-.input-group input:focus{
-    border-color:#4f46e5;
+.hero p{
+font-size:22px;
+opacity:.9;
+margin-bottom:30px;
 }
 
 .btn{
-    width:100%;
-    border:none;
-    background:#4f46e5;
-    color:white;
-    padding:14px;
-    border-radius:12px;
-    cursor:pointer;
-    font-size:16px;
-    transition:.3s;
+display:inline-block;
+padding:15px 40px;
+background:#f59e0b;
+color:#fff;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+transition:.3s;
 }
 
 .btn:hover{
-    background:#4338ca;
+transform:translateY(-3px);
 }
 
-.text-center{
-    text-align:center;
+section{
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
 }
 
-.link{
-    color:#4f46e5;
-    cursor:pointer;
-    margin-top:15px;
-    display:inline-block;
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
-.footer{
-    margin-top:20px;
-    text-align:center;
-    color:#888;
-    font-size:13px;
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+}
+
+.card h3{
+margin-bottom:15px;
+}
+
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.1);
 }
 
 @media(max-width:768px){
 
-.container{
-    flex-direction:column;
+.hero h1{
+font-size:48px;
 }
 
-.left{
-    padding:40px 20px;
-}
-
-.left h1{
-    font-size:30px;
-}
-
-.right{
-    padding:30px 20px;
+.hero p{
+font-size:18px;
 }
 
 }
 
 </style>
 </head>
+
 <body>
 
-<div class="container">
+<header>
+<div class="hero">
+<h1>NA777</h1>
+<p>Official Website</p>
+<a href="https://na777.io" class="btn">
+Visit Now
+</a>
+</div>
+</header>
 
-<div class="left">
-    <h1>欢迎访问</h1>
-    <p>
-        安全 · 快速 · 响应式<br>
-        GitHub Pages 静态部署
-    </p>
+<section>
+
+<div class="features">
+
+<div class="card">
+<h3>Fast Access</h3>
+<p>Responsive experience across desktop and mobile devices.</p>
 </div>
 
-<div class="right">
+<div class="card">
+<h3>Modern Design</h3>
+<p>Clean interface built with modern web technologies.</p>
+</div>
 
-    <div class="logo">
-        <h2>会员中心</h2>
-    </div>
-
-    <div class="tabs">
-        <button class="tab active" onclick="showForm('login')">登录</button>
-        <button class="tab" onclick="showForm('register')">注册</button>
-    </div>
-
-    <!-- 登录 -->
-    <form id="login" class="form active">
-
-        <div class="input-group">
-            <input type="email" placeholder="邮箱地址" required>
-        </div>
-
-        <div class="input-group">
-            <input type="password" placeholder="密码" required>
-        </div>
-
-        <button class="btn" type="submit">
-            登录
-        </button>
-
-        <div class="text-center">
-            <span class="link">忘记密码？</span>
-        </div>
-
-    </form>
-
-    <!-- 注册 -->
-    <form id="register" class="form">
-
-        <div class="input-group">
-            <input type="text" placeholder="用户名" required>
-        </div>
-
-        <div class="input-group">
-            <input type="email" placeholder="邮箱地址" required>
-        </div>
-
-        <div class="input-group">
-            <input type="password" placeholder="设置密码" required>
-        </div>
-
-        <div class="input-group">
-            <input type="password" placeholder="确认密码" required>
-        </div>
-
-        <button class="btn" type="submit">
-            创建账户
-        </button>
-
-    </form>
-
-    <div class="footer">
-        © 2026 All Rights Reserved
-    </div>
-
+<div class="card">
+<h3>Secure Platform</h3>
+<p>Optimized performance and reliable infrastructure.</p>
 </div>
 
 </div>
 
-<script>
+</section>
 
-function showForm(type){
-
-    document.querySelectorAll('.tab').forEach(btn=>{
-        btn.classList.remove('active');
-    });
-
-    document.querySelectorAll('.form').forEach(form=>{
-        form.classList.remove('active');
-    });
-
-    if(type === 'login'){
-        document.querySelectorAll('.tab')[0].classList.add('active');
-    }else{
-        document.querySelectorAll('.tab')[1].classList.add('active');
-    }
-
-    document.getElementById(type).classList.add('active');
-}
-
-document.getElementById('login').addEventListener('submit',function(e){
-    e.preventDefault();
-    alert('登录请求已提交');
-});
-
-document.getElementById('register').addEventListener('submit',function(e){
-    e.preventDefault();
-
-    const pwd1 = document.querySelector('#register input[type=password]').value;
-    const pwd2 = document.querySelectorAll('#register input[type=password]')[1].value;
-
-    if(pwd1 !== pwd2){
-        alert('两次密码输入不一致');
-        return;
-    }
-
-    alert('注册成功');
-});
-
-</script>
+<footer>
+© 2026 NA777.IO
+</footer>
 
 </body>
 </html>
