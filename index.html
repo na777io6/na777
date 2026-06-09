@@ -1,442 +1,312 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HOKIGAME Reviews | Gaming Platform Reviews & Guides</title>
+<!-- Google Search Console -->
+<meta name="google-site-verification" content="urdmy9LCGYEqfBY0HpWSz0ZrP8GzEvk-uSoLEimvzmk" />
 
-<meta name="description" content="Independent HOKIGAME reviews, platform analysis, guides, comparisons and gaming insights.">
+<!-- SEO -->
+<meta name="description" content="现代化响应式登录注册系统">
+<meta name="keywords" content="登录,注册,会员中心,GitHub Pages">
+<meta name="author" content="Admin">
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+<meta name="theme-color" content="#4f46e5">
+
+<!-- Open Graph -->
+<meta property="og:title" content="会员中心">
+<meta property="og:description" content="现代化登录注册页面">
+<meta property="og:type" content="website">
+
+<title>会员中心</title>
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-:root{
---bg:#070b16;
---card:#111827;
---border:#1f2937;
---text:#ffffff;
---muted:#9ca3af;
---primary:#8b5cf6;
---secondary:#06b6d4;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:linear-gradient(180deg,#070b16,#0f172a);
-color:var(--text);
-line-height:1.7;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
 }
 
 .container{
-width:90%;
-max-width:1200px;
-margin:auto;
+    width:1000px;
+    max-width:100%;
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    display:flex;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
 }
 
-nav{
-position:sticky;
-top:0;
-z-index:999;
-background:rgba(7,11,22,.8);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border);
+.left{
+    flex:1;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:60px;
 }
 
-.nav-wrap{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 0;
+.left h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.left p{
+    text-align:center;
+    line-height:1.8;
+    opacity:.95;
+}
+
+.right{
+    flex:1;
+    padding:50px;
 }
 
 .logo{
-font-size:24px;
-font-weight:bold;
+    text-align:center;
+    margin-bottom:30px;
 }
 
-.menu{
-display:flex;
-gap:24px;
+.logo h2{
+    color:#4f46e5;
 }
 
-.menu a{
-text-decoration:none;
-color:white;
+.tabs{
+    display:flex;
+    gap:10px;
+    margin-bottom:30px;
 }
 
-.hero{
-padding:120px 20px;
-text-align:center;
+.tab{
+    flex:1;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    cursor:pointer;
+    background:#eef2ff;
+    font-size:16px;
+    transition:.3s;
 }
 
-.badge{
-display:inline-block;
-padding:8px 16px;
-background:rgba(139,92,246,.15);
-border:1px solid rgba(139,92,246,.4);
-border-radius:999px;
-margin-bottom:24px;
+.tab.active{
+    background:#4f46e5;
+    color:white;
 }
 
-.hero h1{
-font-size:64px;
-line-height:1.1;
-margin-bottom:20px;
+.form{
+    display:none;
 }
 
-.gradient{
-background:linear-gradient(90deg,#8b5cf6,#06b6d4);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+.form.active{
+    display:block;
 }
 
-.hero p{
-max-width:700px;
-margin:auto;
-font-size:20px;
-color:var(--muted);
+.input-group{
+    margin-bottom:18px;
 }
 
-.buttons{
-margin-top:35px;
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+}
+
+.input-group input:focus{
+    border-color:#4f46e5;
 }
 
 .btn{
-display:inline-block;
-padding:14px 28px;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-margin:8px;
+    width:100%;
+    border:none;
+    background:#4f46e5;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
 }
 
-.btn-primary{
-background:linear-gradient(90deg,#8b5cf6,#2563eb);
-color:white;
+.btn:hover{
+    background:#4338ca;
 }
 
-.btn-secondary{
-border:1px solid var(--border);
-color:white;
+.text-center{
+    text-align:center;
 }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-padding:20px;
-margin-top:50px;
+.link{
+    color:#4f46e5;
+    cursor:pointer;
+    margin-top:15px;
+    display:inline-block;
 }
 
-.stat{
-background:var(--card);
-padding:25px;
-border-radius:16px;
-border:1px solid var(--border);
-}
-
-.stat h2{
-font-size:32px;
-}
-
-.section{
-padding:80px 0;
-}
-
-.section-title{
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:24px;
-}
-
-.card{
-background:var(--card);
-padding:28px;
-border-radius:18px;
-border:1px solid var(--border);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-.card p{
-color:var(--muted);
-}
-
-.about{
-max-width:850px;
-margin:auto;
-text-align:center;
-color:var(--muted);
-font-size:18px;
-}
-
-footer{
-margin-top:80px;
-padding:40px 0;
-text-align:center;
-border-top:1px solid var(--border);
-color:var(--muted);
+.footer{
+    margin-top:20px;
+    text-align:center;
+    color:#888;
+    font-size:13px;
 }
 
 @media(max-width:768px){
 
-.hero h1{
-font-size:42px;
+.container{
+    flex-direction:column;
 }
 
-.stats{
-grid-template-columns:1fr 1fr;
+.left{
+    padding:40px 20px;
 }
 
-.nav-wrap{
-flex-direction:column;
-gap:15px;
+.left h1{
+    font-size:30px;
 }
 
-.menu{
-flex-wrap:wrap;
-justify-content:center;
+.right{
+    padding:30px 20px;
 }
+
 }
 
 </style>
 </head>
-
 <body>
 
-<nav>
-<div class="container nav-wrap">
-
-<div class="logo">HOKIGAME Reviews</div>
-
-<div class="menu">
-<a href="#reviews">Reviews</a>
-<a href="#guides">Guides</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-</nav>
-
-<section class="hero">
-
-<div class="badge">
-Independent Gaming Reviews
-</div>
-
-<h1>
-<span class="gradient">HOKIGAME</span><br>
-Reviews & Guides
-</h1>
-
-<p>
-Independent reviews, gaming platform analysis,
-feature comparisons and user experience insights.
-</p>
-
-<div class="buttons">
-
-<a href="https://hokigames.id/"
-target="_blank"
-class="btn btn-primary">
-Visit HOKIGAMES.ID
-</a>
-
-<a href="https://github.com/na7775"
-target="_blank"
-class="btn btn-secondary">
-GitHub
-</a>
-
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<h2>20+</h2>
-<p>Reviews</p>
-</div>
-
-<div class="stat">
-<h2>10+</h2>
-<p>Guides</p>
-</div>
-
-<div class="stat">
-<h2>2025</h2>
-<p>Updated</p>
-</div>
-
-<div class="stat">
-<h2>100%</h2>
-<p>Independent</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="reviews" class="section">
-
 <div class="container">
 
-<h2 class="section-title">
-Featured Reviews
-</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>HOKIGAME Review 2025</h3>
-<p>
-Detailed review of platform features,
-performance and user experience.
-</p>
+<div class="left">
+    <h1>欢迎访问</h1>
+    <p>
+        安全 · 快速 · 响应式<br>
+        GitHub Pages 静态部署
+    </p>
 </div>
 
-<div class="card">
-<h3>Mobile Experience Test</h3>
-<p>
-Testing usability and performance on
-Android and iOS devices.
-</p>
-</div>
+<div class="right">
 
-<div class="card">
-<h3>Platform Features Analysis</h3>
-<p>
-Explore navigation, accessibility and
-overall user experience.
-</p>
-</div>
+    <div class="logo">
+        <h2>会员中心</h2>
+    </div>
 
-</div>
+    <div class="tabs">
+        <button class="tab active" onclick="showForm('login')">登录</button>
+        <button class="tab" onclick="showForm('register')">注册</button>
+    </div>
 
-</div>
+    <!-- 登录 -->
+    <form id="login" class="form active">
 
-</section>
+        <div class="input-group">
+            <input type="email" placeholder="邮箱地址" required>
+        </div>
 
-<section id="guides" class="section">
+        <div class="input-group">
+            <input type="password" placeholder="密码" required>
+        </div>
 
-<div class="container">
+        <button class="btn" type="submit">
+            登录
+        </button>
 
-<h2 class="section-title">
-Popular Guides
-</h2>
+        <div class="text-center">
+            <span class="link">忘记密码？</span>
+        </div>
 
-<div class="grid">
+    </form>
 
-<div class="card">
-<h3>Getting Started Guide</h3>
-<p>
-A beginner's guide to understanding
-the platform.
-</p>
-</div>
+    <!-- 注册 -->
+    <form id="register" class="form">
 
-<div class="card">
-<h3>User Experience Tips</h3>
-<p>
-Helpful tips and best practices.
-</p>
-</div>
+        <div class="input-group">
+            <input type="text" placeholder="用户名" required>
+        </div>
 
-<div class="card">
-<h3>Platform Comparison</h3>
-<p>
-Compare HOKIGAME with other
-gaming platforms.
-</p>
-</div>
+        <div class="input-group">
+            <input type="email" placeholder="邮箱地址" required>
+        </div>
 
-</div>
+        <div class="input-group">
+            <input type="password" placeholder="设置密码" required>
+        </div>
 
-</div>
+        <div class="input-group">
+            <input type="password" placeholder="确认密码" required>
+        </div>
 
-</section>
+        <button class="btn" type="submit">
+            创建账户
+        </button>
 
-<section id="about" class="section">
+    </form>
 
-<div class="container">
-
-<h2 class="section-title">
-About HOKIGAME Reviews
-</h2>
-
-<div class="about">
-
-<p>
-HOKIGAME Reviews is an independent resource
-focused on gaming platform reviews, feature
-analysis, guides and user experience insights.
-
-Our goal is to provide transparent information,
-helpful comparisons and practical guides for users.
-</p>
+    <div class="footer">
+        © 2026 All Rights Reserved
+    </div>
 
 </div>
 
 </div>
 
-</section>
+<script>
 
-<section id="contact" class="section">
+function showForm(type){
 
-<div class="container">
+    document.querySelectorAll('.tab').forEach(btn=>{
+        btn.classList.remove('active');
+    });
 
-<h2 class="section-title">
-Links
-</h2>
+    document.querySelectorAll('.form').forEach(form=>{
+        form.classList.remove('active');
+    });
 
-<div class="grid">
+    if(type === 'login'){
+        document.querySelectorAll('.tab')[0].classList.add('active');
+    }else{
+        document.querySelectorAll('.tab')[1].classList.add('active');
+    }
 
-<div class="card">
-<h3>Official Website</h3>
-<p>
-https://hokigames.id/
-</p>
-</div>
+    document.getElementById(type).classList.add('active');
+}
 
-<div class="card">
-<h3>GitHub</h3>
-<p>
-https://github.com/na7775
-</p>
-</div>
+document.getElementById('login').addEventListener('submit',function(e){
+    e.preventDefault();
+    alert('登录请求已提交');
+});
 
-</div>
+document.getElementById('register').addEventListener('submit',function(e){
+    e.preventDefault();
 
-</div>
+    const pwd1 = document.querySelector('#register input[type=password]').value;
+    const pwd2 = document.querySelectorAll('#register input[type=password]')[1].value;
 
-</section>
+    if(pwd1 !== pwd2){
+        alert('两次密码输入不一致');
+        return;
+    }
 
-<footer>
-<p>
-© 2025 HOKIGAME Reviews. All Rights Reserved.
-</p>
-</footer>
+    alert('注册成功');
+});
+
+</script>
 
 </body>
 </html>
-```
